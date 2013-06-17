@@ -31,8 +31,8 @@
     
     MKPointAnnotation *pin = [MKPointAnnotation new];
     pin.coordinate = [_twunch location];
-//    pin.title = _twunch.title;
-//    pin.subtitle = _twunch.address;
+    pin.title = _twunch.name;
+    pin.subtitle = _twunch.address;
     [_mapView addAnnotation:pin];
 }
 

@@ -8,4 +8,6 @@
 
 @interface Participant : NSObject
 @property (nonatomic, strong) NSString *twitterHandle;
+
+- (NSString *)URL;
 @end

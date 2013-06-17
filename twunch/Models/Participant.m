@@ -9,4 +9,9 @@
 #import "Participant.h"
 
 @implementation Participant
+
+- (NSString *)URL {
+    return [NSString stringWithFormat:@"http://twitter.com/%@", _twitterHandle];
+}
+
 @end

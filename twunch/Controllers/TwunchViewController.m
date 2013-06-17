@@ -62,8 +62,7 @@
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    MapViewController *mapController = segue.destinationViewController;
-    mapController.twunch = _twunch;
+    [segue.destinationViewController performSelector:@selector(setTwunch:) withObject:_twunch];
 }
 
 @end
