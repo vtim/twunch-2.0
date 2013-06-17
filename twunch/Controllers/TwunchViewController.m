@@ -28,7 +28,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Register", @"Register") style:UIBarButtonItemStylePlain target:self action:@selector(didPressRegister:)];
+    if ([_twunch.participants containsObject:twunchapp.account.username]) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Unregister", @"Unregister") style:UIBarButtonItemStylePlain target:self action:@selector(didPressUnregister:)];
+    } else {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Register", @"Register") style:UIBarButtonItemStylePlain target:self action:@selector(didPressRegister:)];
+    }
+    
     
     _nameCell.textLabel.text = _twunch.name;
     _dateCell.textLabel.text = [_twunch.date fullFormat];
@@ -46,12 +51,28 @@
     pin.coordinate = [_twunch location];
     [_mapView addAnnotation:pin];
 }
+//
+//#pragma mark - Table
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return indexPath.row == 0 ? 0 : 44.0;
+//}
 
 #pragma mark - Actions
 
 - (IBAction)didPressRegister:(id)sender {
     __weak SLComposeViewController *composer = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     [composer setInitialText:[NSString stringWithFormat:@"(%@) @twunch I'll be there!", _twunch.name]];
+    [composer addURL:[NSURL URLWithString:_twunch.URL]];
+    [composer setCompletionHandler:^(SLComposeViewControllerResult result) {
+        [composer dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [self presentViewController:composer animated:YES completion:nil];
+}
+
+- (IBAction)didPressUnregister:(id)sender {
+    __weak SLComposeViewController *composer = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [composer setInitialText:[NSString stringWithFormat:@"(%@) @twunch I won't be able to make it!", _twunch.name]];
     [composer addURL:[NSURL URLWithString:_twunch.URL]];
     [composer setCompletionHandler:^(SLComposeViewControllerResult result) {
         [composer dismissViewControllerAnimated:YES completion:nil];

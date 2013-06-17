@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 fousa. All rights reserved.
 //
 
+#import <Accounts/Accounts.h>
+
 #import "TwunchesViewController.h"
 #import "TwunchViewController.h"
 
@@ -35,6 +37,19 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    if (twunchapp.account == nil) {
+        ACAccountStore *store = [[ACAccountStore alloc] init];
+        ACAccountType *twitterType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+        [store requestAccessToAccountsWithType:twitterType options:nil completion:^(BOOL granted, NSError *error) {
+            if (granted) {
+                ACAccountType *twitterType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+                NSArray *twitterAccounts = [store accountsWithAccountType:twitterType];
+                if (twitterAccounts.count > 0) {
+                    twunchapp.account = twitterAccounts.firstObject;
+                }
+            }
+        }];
+    }
     [self willRefresh:self.refreshControl];
 }
 

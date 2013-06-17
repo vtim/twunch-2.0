@@ -275,38 +275,6 @@
             <point key="canvasLocation" x="-119" y="-190"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="didPressDirections:"/>
-                <relationship kind="outlet" name="_mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ParticipantsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ParticipantsViewController.h"/>
-        </class>
-        <class className="TwunchViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TwunchViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="didPressRegister:"/>
-                <relationship kind="outlet" name="_addressCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="_dateCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="_mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="_nameCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="_participantsCell" candidateClass="UITableViewCell"/>
-            </relationships>
-        </class>
-        <class className="TwunchesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TwunchesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="willRefresh:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
