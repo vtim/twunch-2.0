@@ -14,6 +14,8 @@
 		9D5EB653176BAB760087FA1A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5EB652176BAB760087FA1A /* MapKit.framework */; };
 		9D5EB654176BABC90087FA1A /* TwunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5EB651176BAAF50087FA1A /* TwunchViewController.m */; };
 		9D5EB657176BBB120087FA1A /* ParticipantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5EB656176BBB000087FA1A /* ParticipantsViewController.m */; };
+		9D6EC6D0176F70510073662D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6EC6CF176F70510073662D /* QuartzCore.framework */; };
+		9D6EC6D6176F713B0073662D /* ParticipantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EC6D5176F713B0073662D /* ParticipantCell.m */; };
 		9D9A76A5176F2DD3007B201B /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A7693176F2DD3007B201B /* AFHTTPClient.m */; };
 		9D9A76A6176F2DD3007B201B /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A7695176F2DD3007B201B /* AFHTTPRequestOperation.m */; };
 		9D9A76A7176F2DD3007B201B /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A7697176F2DD3007B201B /* AFImageRequestOperation.m */; };
@@ -65,6 +67,9 @@
 		9D5EB652176BAB760087FA1A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9D5EB655176BBB000087FA1A /* ParticipantsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticipantsViewController.h; sourceTree = "<group>"; };
 		9D5EB656176BBB000087FA1A /* ParticipantsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParticipantsViewController.m; sourceTree = "<group>"; };
+		9D6EC6CF176F70510073662D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9D6EC6D4176F713B0073662D /* ParticipantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticipantCell.h; sourceTree = "<group>"; };
+		9D6EC6D5176F713B0073662D /* ParticipantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticipantCell.m; sourceTree = "<group>"; };
 		9D9A7689176F2C54007B201B /* TwunchAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwunchAPI.h; sourceTree = "<group>"; };
 		9D9A768A176F2C54007B201B /* TwunchAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwunchAPI.m; sourceTree = "<group>"; };
 		9D9A768C176F2CB3007B201B /* Twunch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Twunch.h; sourceTree = "<group>"; };
@@ -122,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6EC6D0176F70510073662D /* QuartzCore.framework in Frameworks */,
 				9D1B79C2176F43C500C01FBB /* Social.framework in Frameworks */,
 				9D1B79BC176F419700C01FBB /* CoreLocation.framework in Frameworks */,
 				9D9A76B8176F3279007B201B /* MobileCoreServices.framework in Frameworks */,
@@ -146,9 +152,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9D1B79BD176F421000C01FBB /* Components */ = {
+		9D6EC6D3176F713B0073662D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9D6EC6D4176F713B0073662D /* ParticipantCell.h */,
+				9D6EC6D5176F713B0073662D /* ParticipantCell.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -255,6 +263,7 @@
 		9DF105BF176885CA00FC9F33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D6EC6CF176F70510073662D /* QuartzCore.framework */,
 				9D1B79C1176F43C500C01FBB /* Social.framework */,
 				9D1B79BB176F419700C01FBB /* CoreLocation.framework */,
 				9D9A76B7176F3279007B201B /* MobileCoreServices.framework */,
@@ -277,7 +286,7 @@
 				9DF105D8176885CA00FC9F33 /* Images.xcassets */,
 				9D9A768B176F2CA2007B201B /* Models */,
 				9D9A7688176F2C41007B201B /* API */,
-				9D1B79BD176F421000C01FBB /* Components */,
+				9D6EC6D3176F713B0073662D /* Components */,
 				9D9A76AE176F3069007B201B /* Extentions */,
 				9DE05E73176BA8250049AAB6 /* Controllers */,
 				9D9A7690176F2DB5007B201B /* Vendor */,
@@ -432,6 +441,7 @@
 				9D9A76AA176F2DD3007B201B /* AFPropertyListRequestOperation.m in Sources */,
 				9D9A76A5176F2DD3007B201B /* AFHTTPClient.m in Sources */,
 				9D9A76A6176F2DD3007B201B /* AFHTTPRequestOperation.m in Sources */,
+				9D6EC6D6176F713B0073662D /* ParticipantCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
