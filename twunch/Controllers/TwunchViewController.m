@@ -10,6 +10,7 @@
 #import <Social/Social.h>
 
 #import "TwunchViewController.h"
+#import "MapViewController.h"
 
 #import "NSDate+Formatting.h"
 
@@ -46,6 +47,8 @@
     [_mapView addAnnotation:pin];
 }
 
+#pragma mark - Actions
+
 - (IBAction)didPressRegister:(id)sender {
     __weak SLComposeViewController *composer = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     [composer setInitialText:[NSString stringWithFormat:@"(%@) @twunch I'll be there!", _twunch.name]];
@@ -54,6 +57,13 @@
         [composer dismissViewControllerAnimated:YES completion:nil];
     }];
     [self presentViewController:composer animated:YES completion:nil];
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    MapViewController *mapController = segue.destinationViewController;
+    mapController.twunch = _twunch;
 }
 
 @end

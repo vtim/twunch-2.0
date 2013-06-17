@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9D1B79BC176F419700C01FBB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1B79BB176F419700C01FBB /* CoreLocation.framework */; };
 		9D1B79C2176F43C500C01FBB /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1B79C1176F43C500C01FBB /* Social.framework */; };
+		9D1B79C5176F46DC00C01FBB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B79C4176F44C300C01FBB /* MapViewController.m */; };
 		9D5EB64F176BA9D50087FA1A /* TwunchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE05E75176BA8420049AAB6 /* TwunchesViewController.m */; };
 		9D5EB653176BAB760087FA1A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5EB652176BAB760087FA1A /* MapKit.framework */; };
 		9D5EB654176BABC90087FA1A /* TwunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5EB651176BAAF50087FA1A /* TwunchViewController.m */; };
@@ -57,6 +58,8 @@
 /* Begin PBXFileReference section */
 		9D1B79BB176F419700C01FBB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9D1B79C1176F43C500C01FBB /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		9D1B79C3176F44C300C01FBB /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		9D1B79C4176F44C300C01FBB /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		9D5EB650176BAAF50087FA1A /* TwunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwunchViewController.h; sourceTree = "<group>"; };
 		9D5EB651176BAAF50087FA1A /* TwunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwunchViewController.m; sourceTree = "<group>"; };
 		9D5EB652176BAB760087FA1A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -222,6 +225,8 @@
 				9DE05E75176BA8420049AAB6 /* TwunchesViewController.m */,
 				9D5EB650176BAAF50087FA1A /* TwunchViewController.h */,
 				9D5EB651176BAAF50087FA1A /* TwunchViewController.m */,
+				9D1B79C3176F44C300C01FBB /* MapViewController.h */,
+				9D1B79C4176F44C300C01FBB /* MapViewController.m */,
 				9D5EB655176BBB000087FA1A /* ParticipantsViewController.h */,
 				9D5EB656176BBB000087FA1A /* ParticipantsViewController.m */,
 			);
@@ -414,6 +419,7 @@
 				9D5EB657176BBB120087FA1A /* ParticipantsViewController.m in Sources */,
 				9D5EB64F176BA9D50087FA1A /* TwunchesViewController.m in Sources */,
 				9D9A76AC176F2DD3007B201B /* AFXMLRequestOperation.m in Sources */,
+				9D1B79C5176F46DC00C01FBB /* MapViewController.m in Sources */,
 				9D5EB654176BABC90087FA1A /* TwunchViewController.m in Sources */,
 				9D9A76AD176F2DD3007B201B /* UIImageView+AFNetworking.m in Sources */,
 				9D9A76AB176F2DD3007B201B /* AFURLConnectionOperation.m in Sources */,
