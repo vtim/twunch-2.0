@@ -102,6 +102,10 @@
             _twunch.address = _currentString;
         }
         
+        if([elementName isEqualToString:@"note"]) {
+            _twunch.note = _currentString;
+        }
+        
         if([elementName isEqualToString:@"closed"]) {
             _twunch.closed = [_currentString isEqualToString:@"true"];
         }

@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *URL;
 @property (nonatomic, strong) NSString *address;
+@property (nonatomic, strong) NSString *note;
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSArray *participants;
 

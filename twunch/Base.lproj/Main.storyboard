@@ -122,14 +122,32 @@
                                             <segue destination="aVn-2G-coG" kind="push" identifier="Participants" id="NlT-UA-tAe"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="HgL-4g-xuw" rowHeight="54" style="IBUITableViewCellStyleDefault" id="f5U-cL-CEC">
+                                        <rect key="frame" x="0.0" y="162" width="320" height="54"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="53"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Note" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" id="HgL-4g-xuw">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="53"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="9Ob-si-68v" rowHeight="70" style="IBUITableViewCellStyleDefault" id="cPY-Wg-Oo2">
-                                        <rect key="frame" x="0.0" y="162" width="320" height="70"/>
+                                        <rect key="frame" x="0.0" y="216" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Somewhere on a street 3 Inaplacewith a longer name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" id="9Ob-si-68v">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Somewhere on a street 3 Inaplacewith a longer name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" id="9Ob-si-68v">
                                                     <rect key="frame" x="15" y="0.0" width="270" height="69"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -143,15 +161,15 @@
                                             <segue destination="nRO-uk-3is" kind="push" identifier="Map" id="gSn-yV-J9E"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="184" id="9KZ-KV-K9Q">
-                                        <rect key="frame" x="0.0" y="232" width="320" height="184"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="210" id="9KZ-KV-K9Q">
+                                        <rect key="frame" x="0.0" y="286" width="320" height="210"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="183"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="209"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TC0-pt-RdD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="Sos-UI-i2t" id="Sav-ZL-MEf"/>
@@ -180,6 +198,7 @@
                         <outlet property="_dateCell" destination="ZIb-MK-9Bv" id="blo-Wz-Dvt"/>
                         <outlet property="_mapView" destination="TC0-pt-RdD" id="gaT-Sf-Mga"/>
                         <outlet property="_nameCell" destination="zHF-95-K6a" id="MgR-tp-HhG"/>
+                        <outlet property="_noteCell" destination="f5U-cL-CEC" id="lF6-mG-PD6"/>
                         <outlet property="_participantsCell" destination="KKv-XR-9Os" id="Ej6-Kd-DGH"/>
                     </connections>
                 </tableViewController>
@@ -275,6 +294,39 @@
             <point key="canvasLocation" x="-119" y="-190"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didPressDirections:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ParticipantsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ParticipantsViewController.h"/>
+        </class>
+        <class className="TwunchViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TwunchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didPressRegister:"/>
+                <relationship kind="action" name="didPressUnregister:"/>
+                <relationship kind="outlet" name="_addressCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="_dateCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="_mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="_nameCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="_noteCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="_participantsCell" candidateClass="UITableViewCell"/>
+            </relationships>
+        </class>
+        <class className="TwunchesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TwunchesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="willRefresh:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

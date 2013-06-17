@@ -22,6 +22,7 @@
     IBOutlet UITableViewCell *_dateCell;
     IBOutlet UITableViewCell *_participantsCell;
     IBOutlet UITableViewCell *_addressCell;
+    IBOutlet UITableViewCell *_noteCell;
     IBOutlet MKMapView *_mapView;
 }
 
@@ -36,6 +37,7 @@
     
     
     _nameCell.textLabel.text = _twunch.name;
+    _noteCell.textLabel.text = _twunch.note == nil || [_twunch.note isEqualToString:@""] ? NSLocalizedString(@"No note", @"No note") : _twunch.note;
     _dateCell.textLabel.text = [_twunch.date fullFormat];
     _participantsCell.textLabel.text = [NSString stringWithFormat:@"%i %@", _twunch.participants.count , [_twunch you] ? NSLocalizedString(@"participants including you", @"participants including you") : NSLocalizedString(@"participants", @"participants")];
     _addressCell.textLabel.text = _twunch.address;
@@ -51,12 +53,20 @@
     pin.coordinate = [_twunch location];
     [_mapView addAnnotation:pin];
 }
-//
-//#pragma mark - Table
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return indexPath.row == 0 ? 0 : 44.0;
-//}
+
+#pragma mark - Table
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case 0: return [_nameCell.textLabel.text sizeWithFont:_nameCell.textLabel.font constrainedToSize:(CGSize) { 270, MAXFLOAT }].height + 40;
+        case 1: return [_dateCell.textLabel.text sizeWithFont:_dateCell.textLabel.font constrainedToSize:(CGSize) { 270, MAXFLOAT }].height + 40;
+        case 2: return [_participantsCell.textLabel.text sizeWithFont:_participantsCell.textLabel.font constrainedToSize:(CGSize) { 270, MAXFLOAT }].height + 40;
+        case 3: return [_noteCell.textLabel.text sizeWithFont:_noteCell.textLabel.font constrainedToSize:(CGSize) { 270, MAXFLOAT }].height + 40;
+        case 4: return [_addressCell.textLabel.text sizeWithFont:_addressCell.textLabel.font constrainedToSize:(CGSize) { 270, MAXFLOAT }].height + 40;
+        case 5: return 210;
+        default: return 0;
+    }
+}
 
 #pragma mark - Actions
 
