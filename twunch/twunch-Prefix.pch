@@ -10,7 +10,7 @@
 #warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
 
-#define twunch ((AppDelegate *) [UIApplication sharedApplication].delegate)
+#define twunchapp ((AppDelegate *) [UIApplication sharedApplication].delegate)
 
 #define kRSSURL @"http://twunch.be/events.xml?when=future"
 #define kBaseURL @"http://twunch.be"

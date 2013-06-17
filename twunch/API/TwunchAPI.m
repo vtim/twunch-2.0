@@ -155,7 +155,7 @@
 - (void)didSuccess {
     dispatch_async(dispatch_get_main_queue(), ^{
         if (_twunches != nil) {
-            twunch.twunches = _twunches;
+            twunchapp.twunches = _twunches;
         }
         
         _callback(YES);

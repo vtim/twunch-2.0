@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D1B79BC176F419700C01FBB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1B79BB176F419700C01FBB /* CoreLocation.framework */; };
+		9D1B79C2176F43C500C01FBB /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1B79C1176F43C500C01FBB /* Social.framework */; };
 		9D5EB64F176BA9D50087FA1A /* TwunchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE05E75176BA8420049AAB6 /* TwunchesViewController.m */; };
 		9D5EB653176BAB760087FA1A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5EB652176BAB760087FA1A /* MapKit.framework */; };
 		9D5EB654176BABC90087FA1A /* TwunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5EB651176BAAF50087FA1A /* TwunchViewController.m */; };
@@ -53,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D1B79BB176F419700C01FBB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9D1B79C1176F43C500C01FBB /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		9D5EB650176BAAF50087FA1A /* TwunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwunchViewController.h; sourceTree = "<group>"; };
 		9D5EB651176BAAF50087FA1A /* TwunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwunchViewController.m; sourceTree = "<group>"; };
 		9D5EB652176BAB760087FA1A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -115,6 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1B79C2176F43C500C01FBB /* Social.framework in Frameworks */,
+				9D1B79BC176F419700C01FBB /* CoreLocation.framework in Frameworks */,
 				9D9A76B8176F3279007B201B /* MobileCoreServices.framework in Frameworks */,
 				9D9A76B6176F3274007B201B /* SystemConfiguration.framework in Frameworks */,
 				9D5EB653176BAB760087FA1A /* MapKit.framework in Frameworks */,
@@ -137,6 +143,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D1B79BD176F421000C01FBB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		9D9A7688176F2C41007B201B /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +250,8 @@
 		9DF105BF176885CA00FC9F33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D1B79C1176F43C500C01FBB /* Social.framework */,
+				9D1B79BB176F419700C01FBB /* CoreLocation.framework */,
 				9D9A76B7176F3279007B201B /* MobileCoreServices.framework */,
 				9D9A76B5176F3274007B201B /* SystemConfiguration.framework */,
 				9D5EB652176BAB760087FA1A /* MapKit.framework */,
@@ -257,6 +272,7 @@
 				9DF105D8176885CA00FC9F33 /* Images.xcassets */,
 				9D9A768B176F2CA2007B201B /* Models */,
 				9D9A7688176F2C41007B201B /* API */,
+				9D1B79BD176F421000C01FBB /* Components */,
 				9D9A76AE176F3069007B201B /* Extentions */,
 				9DE05E73176BA8250049AAB6 /* Controllers */,
 				9D9A7690176F2DB5007B201B /* Vendor */,

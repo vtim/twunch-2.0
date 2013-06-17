@@ -7,6 +7,7 @@
 //
 
 #import "TwunchesViewController.h"
+#import "TwunchViewController.h"
 
 #import "TwunchAPI.h"
 
@@ -55,11 +56,18 @@
     static NSString *CellIdentifier = @"TwunchCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    Twunch *aTwunch = [self twunchForIndexPath:indexPath];
-    cell.textLabel.text = aTwunch.name;
-    cell.detailTextLabel.text = [aTwunch.date fullFormat];
+    Twunch *twunch = [self twunchForIndexPath:indexPath];
+    cell.textLabel.text = twunch.name;
+    cell.detailTextLabel.text = [twunch.date fullFormat];
     
     return cell;
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    TwunchViewController *twunchController = segue.destinationViewController;
+    twunchController.twunch = [self twunchForIndexPath:[self.tableView indexPathForCell:sender]];
 }
 
 #pragma mark - Data
@@ -80,7 +88,7 @@
 
 - (IBAction)willRefresh:(id)sender {
     [TwunchAPI fetchWithCompletion:^(BOOL success) {
-        _twunches = twunch.twunches;
+        _twunches = twunchapp.twunches;
         [self.refreshControl endRefreshing];
         [self.tableView reloadData];
     }];

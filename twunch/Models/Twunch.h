@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 fousa. All rights reserved.
 //
 
+#import <CoreLocation/CoreLocation.h>
+
 @interface Twunch : NSObject
 @property (nonatomic, assign) BOOL closed;
 @property (nonatomic, assign) CGFloat latitude;
@@ -16,4 +18,6 @@
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSArray *participants;
+
+- (CLLocationCoordinate2D)location;
 @end

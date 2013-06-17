@@ -72,7 +72,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jG8-w3-RsA">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jG8-w3-RsA">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="53"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
@@ -153,6 +153,9 @@
                                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TC0-pt-RdD">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="Sos-UI-i2t" id="Sav-ZL-MEf"/>
+                                                    </connections>
                                                 </mapView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -172,6 +175,13 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="oZC-H8-8xw"/>
+                    <connections>
+                        <outlet property="_addressCell" destination="cPY-Wg-Oo2" id="HPC-ib-Hto"/>
+                        <outlet property="_dateCell" destination="ZIb-MK-9Bv" id="blo-Wz-Dvt"/>
+                        <outlet property="_mapView" destination="TC0-pt-RdD" id="gaT-Sf-Mga"/>
+                        <outlet property="_nameCell" destination="zHF-95-K6a" id="MgR-tp-HhG"/>
+                        <outlet property="_participantsCell" destination="KKv-XR-9Os" id="Ej6-Kd-DGH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVF-v2-oWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
