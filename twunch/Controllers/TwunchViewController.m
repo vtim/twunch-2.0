@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if ([_twunch.participants containsObject:twunchapp.account.username]) {
+    if ([_twunch you]) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Unregister", @"Unregister") style:UIBarButtonItemStylePlain target:self action:@selector(didPressUnregister:)];
     } else {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Register", @"Register") style:UIBarButtonItemStylePlain target:self action:@selector(didPressRegister:)];
@@ -37,7 +37,7 @@
     
     _nameCell.textLabel.text = _twunch.name;
     _dateCell.textLabel.text = [_twunch.date fullFormat];
-    _participantsCell.textLabel.text = [NSString stringWithFormat:@"%i %@", _twunch.participants.count , NSLocalizedString(@"participants", @"participants")];
+    _participantsCell.textLabel.text = [NSString stringWithFormat:@"%i %@", _twunch.participants.count , [_twunch you] ? NSLocalizedString(@"participants including you", @"participants including you") : NSLocalizedString(@"participants", @"participants")];
     _addressCell.textLabel.text = _twunch.address;
     
     MKCoordinateRegion region;

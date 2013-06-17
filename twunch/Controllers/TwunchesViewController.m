@@ -47,10 +47,10 @@
                 if (twitterAccounts.count > 0) {
                     twunchapp.account = twitterAccounts.firstObject;
                 }
+                [self willRefresh:self.refreshControl];
             }
         }];
     }
-    [self willRefresh:self.refreshControl];
 }
 
 #pragma mark - Table

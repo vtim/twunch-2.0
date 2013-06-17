@@ -14,4 +14,9 @@
     return CLLocationCoordinate2DMake(self.latitude, self.longitude);
 }
 
+- (BOOL)you {
+    return YES;
+    return twunchapp.account && [self.participants containsObject:twunchapp.account.username];
+}
+
 @end

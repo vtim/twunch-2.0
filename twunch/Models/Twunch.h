@@ -20,4 +20,5 @@
 @property (nonatomic, strong) NSArray *participants;
 
 - (CLLocationCoordinate2D)location;
+- (BOOL)you;
 @end
