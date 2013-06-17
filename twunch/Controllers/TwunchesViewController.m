@@ -12,11 +12,14 @@
 
 #import "Twunch.h"
 
+#import "NSString+Parsing.h"
+#import "NSDate+Formatting.h"
+
 @interface TwunchesViewController ()
 @end
 
 @implementation TwunchesViewController {
-    NSArray *_twunches;
+    NSDictionary *_twunches;
 }
 
 - (void)viewDidLoad {
@@ -37,25 +40,40 @@
 #pragma mark - Table
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [self months].count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"April";
+    return [[[self months][section] dateFromMonth] fullMonthFormat];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _twunches.count;
+    return [self twunchesForSection:section].count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"TwunchCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    Twunch *aTwunch = _twunches[indexPath.row];
+    Twunch *aTwunch = [self twunchForIndexPath:indexPath];
     cell.textLabel.text = aTwunch.name;
+    cell.detailTextLabel.text = [aTwunch.date fullFormat];
     
     return cell;
+}
+
+#pragma mark - Data
+
+- (NSArray *)months {
+    return [_twunches.allKeys sortedArrayUsingSelector:@selector(compare:)];
+}
+
+- (NSArray *)twunchesForSection:(NSInteger)section {
+    return _twunches[[self months][section]];
+}
+
+- (Twunch *)twunchForIndexPath:(NSIndexPath *)indexPath {
+    return [self twunchesForSection:indexPath.section][indexPath.row];
 }
 
 #pragma mark - Refresh

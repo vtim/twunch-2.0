@@ -8,4 +8,5 @@
 
 @interface NSString (Parsing)
 - (NSDate *)date;
+- (NSDate *)dateFromMonth;
 @end

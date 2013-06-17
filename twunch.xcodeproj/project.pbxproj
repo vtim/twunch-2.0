@@ -26,6 +26,7 @@
 		9D9A76B4176F31F4007B201B /* Twunch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A768D176F2CB3007B201B /* Twunch.m */; };
 		9D9A76B6176F3274007B201B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9A76B5176F3274007B201B /* SystemConfiguration.framework */; };
 		9D9A76B8176F3279007B201B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9A76B7176F3279007B201B /* MobileCoreServices.framework */; };
+		9D9A76BB176F34EF007B201B /* NSDate+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A76BA176F34EF007B201B /* NSDate+Formatting.m */; };
 		9DF105C1176885CA00FC9F33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF105C0176885CA00FC9F33 /* Foundation.framework */; };
 		9DF105C3176885CA00FC9F33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF105C2176885CA00FC9F33 /* CoreGraphics.framework */; };
 		9DF105C5176885CA00FC9F33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF105C4176885CA00FC9F33 /* UIKit.framework */; };
@@ -86,6 +87,8 @@
 		9D9A76B0176F3078007B201B /* NSString+Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Parsing.m"; sourceTree = "<group>"; };
 		9D9A76B5176F3274007B201B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9D9A76B7176F3279007B201B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9D9A76B9176F34EF007B201B /* NSDate+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatting.h"; sourceTree = "<group>"; };
+		9D9A76BA176F34EF007B201B /* NSDate+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Formatting.m"; sourceTree = "<group>"; };
 		9DE05E74176BA8420049AAB6 /* TwunchesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwunchesViewController.h; sourceTree = "<group>"; };
 		9DE05E75176BA8420049AAB6 /* TwunchesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwunchesViewController.m; sourceTree = "<group>"; };
 		9DF105BD176885CA00FC9F33 /* twunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +196,8 @@
 			children = (
 				9D9A76AF176F3078007B201B /* NSString+Parsing.h */,
 				9D9A76B0176F3078007B201B /* NSString+Parsing.m */,
+				9D9A76B9176F34EF007B201B /* NSDate+Formatting.h */,
+				9D9A76BA176F34EF007B201B /* NSDate+Formatting.m */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D9A76B4176F31F4007B201B /* Twunch.m in Sources */,
+				9D9A76BB176F34EF007B201B /* NSDate+Formatting.m in Sources */,
 				9D9A76B1176F3078007B201B /* NSString+Parsing.m in Sources */,
 				9D9A76A7176F2DD3007B201B /* AFImageRequestOperation.m in Sources */,
 				9D5EB657176BBB120087FA1A /* ParticipantsViewController.m in Sources */,

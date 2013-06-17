@@ -14,6 +14,7 @@
 #import "Twunch.h"
 
 #import "NSString+Parsing.h"
+#import "NSDate+Formatting.h"
 
 @interface TwunchAPI () <NSXMLParserDelegate>
 @end
@@ -21,8 +22,9 @@
 @implementation TwunchAPI {
     NSMutableString *_currentString;
     
-    NSMutableArray *_twunches;
+    NSMutableDictionary *_twunches;
     Twunch *_twunch;
+    
     NSMutableArray *_participants;
     Participant *_participant;
     
@@ -67,7 +69,7 @@
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
-    _twunches = [NSMutableArray new];
+    _twunches = [NSMutableDictionary new];
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
@@ -117,7 +119,11 @@
         }
         
         if ([elementName isEqualToString:@"twunch"]) {
-            [_twunches addObject:_twunch];
+            NSString *dateKey = [_twunch.date monthFormat];
+            if (_twunches[dateKey] == nil) {
+                _twunches[dateKey] = [NSMutableArray new];
+            }
+            [_twunches[dateKey] addObject:_twunch];
             _twunch = nil;
         }
     }
