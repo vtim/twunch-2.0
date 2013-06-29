@@ -23,6 +23,8 @@
 
 @implementation TwunchesViewController {
     NSDictionary *_twunches;
+    
+    UIActivityIndicatorView *_activityIndicator;
 }
 
 - (void)viewDidLoad {
@@ -32,12 +34,19 @@
     
     self.refreshControl = [UIRefreshControl new];
     [self.refreshControl addTarget:self action:@selector(willRefresh:) forControlEvents:UIControlEventValueChanged];
+    
+    _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    _activityIndicator.frame = (CGRect) { (self.tableView.bounds.size.width - _activityIndicator.frame.size.width) / 2, (self.view.bounds.size.height - _activityIndicator.frame.size.height) / 2, _activityIndicator.frame.size };
+    _activityIndicator.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+    [self.tableView addSubview:_activityIndicator];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
     if (twunchapp.account == nil) {
+        [_activityIndicator startAnimating];
+        
         ACAccountStore *store = [[ACAccountStore alloc] init];
         ACAccountType *twitterType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
         [store requestAccessToAccountsWithType:twitterType options:nil completion:^(BOOL granted, NSError *error) {
@@ -105,6 +114,7 @@
     [TwunchAPI fetchWithCompletion:^(BOOL success) {
         _twunches = twunchapp.twunches;
         [self.refreshControl endRefreshing];
+        [_activityIndicator stopAnimating];
         [self.tableView reloadData];
     }];
 }
