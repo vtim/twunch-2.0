@@ -16,6 +16,8 @@
 		9D5EB657176BBB120087FA1A /* ParticipantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5EB656176BBB000087FA1A /* ParticipantsViewController.m */; };
 		9D6EC6D0176F70510073662D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6EC6CF176F70510073662D /* QuartzCore.framework */; };
 		9D6EC6D6176F713B0073662D /* ParticipantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EC6D5176F713B0073662D /* ParticipantCell.m */; };
+		9D81EF9D177F7D460064827A /* JMImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D81EF9A177F7D460064827A /* JMImageCache.m */; };
+		9D81EF9E177F7D460064827A /* UIImageView+JMImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D81EF9C177F7D460064827A /* UIImageView+JMImageCache.m */; };
 		9D9A76A5176F2DD3007B201B /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A7693176F2DD3007B201B /* AFHTTPClient.m */; };
 		9D9A76A6176F2DD3007B201B /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A7695176F2DD3007B201B /* AFHTTPRequestOperation.m */; };
 		9D9A76A7176F2DD3007B201B /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A7697176F2DD3007B201B /* AFImageRequestOperation.m */; };
@@ -70,6 +72,10 @@
 		9D6EC6CF176F70510073662D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9D6EC6D4176F713B0073662D /* ParticipantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticipantCell.h; sourceTree = "<group>"; };
 		9D6EC6D5176F713B0073662D /* ParticipantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticipantCell.m; sourceTree = "<group>"; };
+		9D81EF99177F7D460064827A /* JMImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMImageCache.h; sourceTree = "<group>"; };
+		9D81EF9A177F7D460064827A /* JMImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMImageCache.m; sourceTree = "<group>"; };
+		9D81EF9B177F7D460064827A /* UIImageView+JMImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JMImageCache.h"; sourceTree = "<group>"; };
+		9D81EF9C177F7D460064827A /* UIImageView+JMImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JMImageCache.m"; sourceTree = "<group>"; };
 		9D9A7689176F2C54007B201B /* TwunchAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwunchAPI.h; sourceTree = "<group>"; };
 		9D9A768A176F2C54007B201B /* TwunchAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwunchAPI.m; sourceTree = "<group>"; };
 		9D9A768C176F2CB3007B201B /* Twunch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Twunch.h; sourceTree = "<group>"; };
@@ -161,6 +167,17 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		9D81EF98177F7D460064827A /* JMImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				9D81EF99177F7D460064827A /* JMImageCache.h */,
+				9D81EF9A177F7D460064827A /* JMImageCache.m */,
+				9D81EF9B177F7D460064827A /* UIImageView+JMImageCache.h */,
+				9D81EF9C177F7D460064827A /* UIImageView+JMImageCache.m */,
+			);
+			path = JMImageCache;
+			sourceTree = "<group>";
+		};
 		9D9A7688176F2C41007B201B /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +201,7 @@
 		9D9A7690176F2DB5007B201B /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				9D81EF98177F7D460064827A /* JMImageCache */,
 				9D9A7691176F2DD3007B201B /* AFNetworking */,
 			);
 			path = Vendor;
@@ -422,7 +440,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D9A76B4176F31F4007B201B /* Twunch.m in Sources */,
+				9D81EF9D177F7D460064827A /* JMImageCache.m in Sources */,
 				9D9A76BB176F34EF007B201B /* NSDate+Formatting.m in Sources */,
+				9D81EF9E177F7D460064827A /* UIImageView+JMImageCache.m in Sources */,
 				9D9A76B1176F3078007B201B /* NSString+Parsing.m in Sources */,
 				9D9A76A7176F2DD3007B201B /* AFImageRequestOperation.m in Sources */,
 				9D5EB657176BBB120087FA1A /* ParticipantsViewController.m in Sources */,

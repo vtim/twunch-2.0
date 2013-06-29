@@ -11,7 +11,8 @@
 
 #import "Participant.h"
 
-#import "UIImageView+AFNetworking.h"
+//#import "UIImageView+AFNetworking.h"
+#import "UIImageView+JMImageCache.h"
 
 #import "ParticipantsViewController.h"
 
@@ -52,15 +53,21 @@
             if (responseData) {
                 NSDictionary *user = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:NULL];
                 NSString *profileImageUrl = [user objectForKey:@"profile_image_url"];
-                twunchapp.avatars[participant.twitterHandle] = profileImageUrl;
-                [twunchapp cache];
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    NSData *imageData = [NSData dataWithContentsOfURL: [NSURL URLWithString:profileImageUrl]];
-                    _images[indexPath] = [UIImage imageWithData:imageData];
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                if (profileImageUrl) {
+                    twunchapp.avatars[participant.twitterHandle] = profileImageUrl;
+                    [twunchapp cache];
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                        [cell.imageView setImageWithURL:[NSURL URLWithString:profileImageUrl]];
+                        
+                        //
+                        //                    NSData *imageData = [NSData dataWithContentsOfURL: [NSURL URLWithString:profileImageUrl]];
+                        //                    _images[indexPath] = [UIImage imageWithData:imageData];
+                        //                    dispatch_async(dispatch_get_main_queue(), ^{
+                        //                        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                        //                    });
                     });
-                });
+                }
+                
             }
             
         }];

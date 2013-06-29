@@ -15,7 +15,6 @@
 }
 
 - (BOOL)you {
-    return YES;
     return twunchapp.account && [self.participants containsObject:twunchapp.account.username];
 }
 
