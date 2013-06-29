@@ -35,12 +35,15 @@
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Register", @"Register") style:UIBarButtonItemStylePlain target:self action:@selector(didPressRegister:)];
     }
     
-    
     _nameCell.textLabel.text = _twunch.name;
     _noteCell.textLabel.text = _twunch.note == nil || [_twunch.note isEqualToString:@""] ? NSLocalizedString(@"No note", @"No note") : _twunch.note;
     _dateCell.textLabel.text = [_twunch.date fullFormat];
     _participantsCell.textLabel.text = [NSString stringWithFormat:@"%i %@", _twunch.participants.count , [_twunch you] ? NSLocalizedString(@"participants including you", @"participants including you") : NSLocalizedString(@"participants", @"participants")];
     _addressCell.textLabel.text = _twunch.address;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
     MKCoordinateRegion region;
 	MKCoordinateSpan span = MKCoordinateSpanMake(0.004, 0.004);
@@ -48,6 +51,8 @@
 	region.center = [_twunch location];
 	[_mapView setRegion:region animated:YES];
 	[_mapView regionThatFits:region];
+    
+    [_mapView removeAnnotations:_mapView.annotations];
     
     MKPointAnnotation *pin = [MKPointAnnotation new];
     pin.coordinate = [_twunch location];
