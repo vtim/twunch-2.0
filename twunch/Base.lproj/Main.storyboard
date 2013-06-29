@@ -72,7 +72,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jG8-w3-RsA">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="jG8-w3-RsA">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="53"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
@@ -312,6 +312,16 @@
         </class>
         <class className="TwunchViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TwunchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didPressRegister:"/>
+                <relationship kind="action" name="didPressUnregister:"/>
+                <relationship kind="outlet" name="_addressCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="_dateCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="_mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="_nameCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="_noteCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="_participantsCell" candidateClass="UITableViewCell"/>
+            </relationships>
         </class>
         <class className="TwunchesViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TwunchesViewController.h"/>
