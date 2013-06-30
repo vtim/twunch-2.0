@@ -14,13 +14,17 @@
 @end
 
 @implementation MapViewController {
-    IBOutlet MKMapView *_mapView;
+    __weak IBOutlet MKMapView *_mapView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Directions", @"Directions") style:UIBarButtonItemStylePlain target:self action:@selector(didPressDirections:)];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
     MKCoordinateRegion region;
 	MKCoordinateSpan span = MKCoordinateSpanMake(0.004, 0.004);

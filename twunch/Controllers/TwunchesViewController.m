@@ -10,6 +10,7 @@
 
 #import "TwunchesViewController.h"
 #import "TwunchViewController.h"
+#import "TwunchesMapViewController.h"
 
 #import "TwunchAPI.h"
 
@@ -62,6 +63,12 @@
     }
 }
 
+#pragma mark - Actions
+
+- (IBAction)didPressMap:(id)sender {
+    [self performSegueWithIdentifier:@"Map" sender:nil];
+}
+
 #pragma mark - Table
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -90,8 +97,14 @@
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    TwunchViewController *twunchController = segue.destinationViewController;
-    twunchController.twunch = [self twunchForIndexPath:[self.tableView indexPathForCell:sender]];
+    if ([segue.identifier isEqualToString:@"Detail"]) {
+        TwunchViewController *twunchController = segue.destinationViewController;
+        twunchController.twunch = [self twunchForIndexPath:[self.tableView indexPathForCell:sender]];
+    } else if ([segue.identifier isEqualToString:@"Map"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        TwunchesMapViewController *mapController = (TwunchesMapViewController *)navigationController.topViewController;
+        mapController.twunches = [_twunches.allValues valueForKeyPath:@"@unionOfArrays.self"];
+    }
 }
 
 #pragma mark - Data
@@ -116,6 +129,8 @@
         [self.refreshControl endRefreshing];
         [_activityIndicator stopAnimating];
         [self.tableView reloadData];
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Map", @"Map") style:UIBarButtonItemStylePlain target:self action:@selector(didPressMap:)];
     }];
 }
 

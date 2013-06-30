@@ -38,7 +38,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="Sos-UI-i2t" kind="push" id="lRK-xj-fjY"/>
+                                    <segue destination="Sos-UI-i2t" kind="push" identifier="Detail" id="lRK-xj-fjY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -49,10 +49,64 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Root View Controller" id="dLC-Li-f2l"/>
+                    <connections>
+                        <segue destination="PX0-Ui-ghc" kind="modal" identifier="Map" modalTransitionStyle="flipHorizontal" id="iEy-yD-2vt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIV-hx-93u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="415" y="-190"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rWr-vU-gJw">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="PX0-Ui-ghc" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y1C-kk-yAo">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="AEa-6u-3q9" kind="relationship" relationship="rootViewController" id="1Bc-cC-BQL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Gv-ne-BdJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961" y="-1612"/>
+        </scene>
+        <!--Twunches Map View Controller-->
+        <scene sceneID="WPe-xG-nbD">
+            <objects>
+                <viewController id="AEa-6u-3q9" customClass="TwunchesMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="88O-Tf-72F">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ELB-bQ-Op7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="AEa-6u-3q9" id="wqQ-a0-MVQ"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ELB-bQ-Op7" firstAttribute="top" secondItem="88O-Tf-72F" secondAttribute="top" id="4Bm-A6-gML"/>
+                            <constraint firstItem="ELB-bQ-Op7" firstAttribute="bottom" secondItem="88O-Tf-72F" secondAttribute="bottom" id="ELq-IX-i9v"/>
+                            <constraint firstItem="ELB-bQ-Op7" firstAttribute="leading" secondItem="88O-Tf-72F" secondAttribute="leading" id="hv5-1c-apg"/>
+                            <constraint firstItem="ELB-bQ-Op7" firstAttribute="trailing" secondItem="88O-Tf-72F" secondAttribute="trailing" id="iFz-xe-2lu"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="lT1-0v-CiF"/>
+                    <connections>
+                        <outlet property="_mapView" destination="ELB-bQ-Op7" id="edq-dA-060"/>
+                        <segue destination="Sos-UI-i2t" kind="push" identifier="Detail" id="DiO-13-U0p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lYd-Z9-gjb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1464" y="-1612"/>
         </scene>
         <!--Twunch View Controller-->
         <scene sceneID="t6y-TZ-nyn">
@@ -206,7 +260,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVF-v2-oWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="-204"/>
+            <point key="canvasLocation" x="1512" y="-190"/>
         </scene>
         <!--Participants View Controller-->
         <scene sceneID="tkx-Pg-2wt">
@@ -246,7 +300,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9X-Qg-Y9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1464" y="-903"/>
+            <point key="canvasLocation" x="2068" y="-889"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="Ypt-Ml-TAX">
@@ -276,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSk-IT-qfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1464" y="-204"/>
+            <point key="canvasLocation" x="2068" y="-190"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ONg-Bt-vj1">
@@ -299,9 +353,6 @@
     <classes>
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="didPressDirections:"/>
-            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -314,10 +365,21 @@
         </class>
         <class className="TwunchViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TwunchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didPressRegister:"/>
+                <relationship kind="action" name="didPressUnregister:"/>
+            </relationships>
+        </class>
+        <class className="TwunchesMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TwunchesMapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didPressList:"/>
+            </relationships>
         </class>
         <class className="TwunchesViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TwunchesViewController.h"/>
             <relationships>
+                <relationship kind="action" name="didPressMap:"/>
                 <relationship kind="action" name="willRefresh:"/>
             </relationships>
         </class>
@@ -327,4 +389,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="DiO-13-U0p"/>
+    </inferredMetricsTieBreakers>
 </document>

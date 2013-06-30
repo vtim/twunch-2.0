@@ -10,14 +10,15 @@
 		9D1B79BC176F419700C01FBB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1B79BB176F419700C01FBB /* CoreLocation.framework */; };
 		9D1B79C2176F43C500C01FBB /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1B79C1176F43C500C01FBB /* Social.framework */; };
 		9D1B79C5176F46DC00C01FBB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B79C4176F44C300C01FBB /* MapViewController.m */; };
+		9D5145901780739F0021F4F2 /* TwunchesMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF0D8A178071E6002DF534 /* TwunchesMapViewController.m */; };
+		9D514595178094F40021F4F2 /* PinAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D514592178094580021F4F2 /* PinAnnotationView.m */; };
+		9D514596178094F70021F4F2 /* PointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D514594178094D50021F4F2 /* PointAnnotation.m */; };
 		9D5EB64F176BA9D50087FA1A /* TwunchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE05E75176BA8420049AAB6 /* TwunchesViewController.m */; };
 		9D5EB653176BAB760087FA1A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5EB652176BAB760087FA1A /* MapKit.framework */; };
 		9D5EB654176BABC90087FA1A /* TwunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5EB651176BAAF50087FA1A /* TwunchViewController.m */; };
 		9D5EB657176BBB120087FA1A /* ParticipantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5EB656176BBB000087FA1A /* ParticipantsViewController.m */; };
 		9D6EC6D0176F70510073662D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6EC6CF176F70510073662D /* QuartzCore.framework */; };
 		9D6EC6D6176F713B0073662D /* ParticipantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EC6D5176F713B0073662D /* ParticipantCell.m */; };
-		9D81EF9D177F7D460064827A /* JMImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D81EF9A177F7D460064827A /* JMImageCache.m */; };
-		9D81EF9E177F7D460064827A /* UIImageView+JMImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D81EF9C177F7D460064827A /* UIImageView+JMImageCache.m */; };
 		9D9A76A5176F2DD3007B201B /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A7693176F2DD3007B201B /* AFHTTPClient.m */; };
 		9D9A76A6176F2DD3007B201B /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A7695176F2DD3007B201B /* AFHTTPRequestOperation.m */; };
 		9D9A76A7176F2DD3007B201B /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A7697176F2DD3007B201B /* AFImageRequestOperation.m */; };
@@ -65,6 +66,10 @@
 		9D1B79C1176F43C500C01FBB /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		9D1B79C3176F44C300C01FBB /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		9D1B79C4176F44C300C01FBB /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		9D514591178094580021F4F2 /* PinAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PinAnnotationView.h; sourceTree = "<group>"; };
+		9D514592178094580021F4F2 /* PinAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PinAnnotationView.m; sourceTree = "<group>"; };
+		9D514593178094D50021F4F2 /* PointAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PointAnnotation.h; sourceTree = "<group>"; };
+		9D514594178094D50021F4F2 /* PointAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PointAnnotation.m; sourceTree = "<group>"; };
 		9D5EB650176BAAF50087FA1A /* TwunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwunchViewController.h; sourceTree = "<group>"; };
 		9D5EB651176BAAF50087FA1A /* TwunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwunchViewController.m; sourceTree = "<group>"; };
 		9D5EB652176BAB760087FA1A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -73,10 +78,6 @@
 		9D6EC6CF176F70510073662D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9D6EC6D4176F713B0073662D /* ParticipantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticipantCell.h; sourceTree = "<group>"; };
 		9D6EC6D5176F713B0073662D /* ParticipantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticipantCell.m; sourceTree = "<group>"; };
-		9D81EF99177F7D460064827A /* JMImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMImageCache.h; sourceTree = "<group>"; };
-		9D81EF9A177F7D460064827A /* JMImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMImageCache.m; sourceTree = "<group>"; };
-		9D81EF9B177F7D460064827A /* UIImageView+JMImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JMImageCache.h"; sourceTree = "<group>"; };
-		9D81EF9C177F7D460064827A /* UIImageView+JMImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JMImageCache.m"; sourceTree = "<group>"; };
 		9D9A7689176F2C54007B201B /* TwunchAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwunchAPI.h; sourceTree = "<group>"; };
 		9D9A768A176F2C54007B201B /* TwunchAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwunchAPI.m; sourceTree = "<group>"; };
 		9D9A768C176F2CB3007B201B /* Twunch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Twunch.h; sourceTree = "<group>"; };
@@ -110,6 +111,8 @@
 		9D9A76BA176F34EF007B201B /* NSDate+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Formatting.m"; sourceTree = "<group>"; };
 		9DBF0D8617806444002DF534 /* AvatarDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarDownloader.h; sourceTree = "<group>"; };
 		9DBF0D8717806444002DF534 /* AvatarDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarDownloader.m; sourceTree = "<group>"; };
+		9DBF0D89178071E6002DF534 /* TwunchesMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwunchesMapViewController.h; sourceTree = "<group>"; };
+		9DBF0D8A178071E6002DF534 /* TwunchesMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwunchesMapViewController.m; sourceTree = "<group>"; };
 		9DE05E74176BA8420049AAB6 /* TwunchesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwunchesViewController.h; sourceTree = "<group>"; };
 		9DE05E75176BA8420049AAB6 /* TwunchesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwunchesViewController.m; sourceTree = "<group>"; };
 		9DF105BD176885CA00FC9F33 /* twunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,19 +169,12 @@
 			children = (
 				9D6EC6D4176F713B0073662D /* ParticipantCell.h */,
 				9D6EC6D5176F713B0073662D /* ParticipantCell.m */,
+				9D514591178094580021F4F2 /* PinAnnotationView.h */,
+				9D514592178094580021F4F2 /* PinAnnotationView.m */,
+				9D514593178094D50021F4F2 /* PointAnnotation.h */,
+				9D514594178094D50021F4F2 /* PointAnnotation.m */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		9D81EF98177F7D460064827A /* JMImageCache */ = {
-			isa = PBXGroup;
-			children = (
-				9D81EF99177F7D460064827A /* JMImageCache.h */,
-				9D81EF9A177F7D460064827A /* JMImageCache.m */,
-				9D81EF9B177F7D460064827A /* UIImageView+JMImageCache.h */,
-				9D81EF9C177F7D460064827A /* UIImageView+JMImageCache.m */,
-			);
-			path = JMImageCache;
 			sourceTree = "<group>";
 		};
 		9D9A7688176F2C41007B201B /* API */ = {
@@ -206,7 +202,6 @@
 		9D9A7690176F2DB5007B201B /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				9D81EF98177F7D460064827A /* JMImageCache */,
 				9D9A7691176F2DD3007B201B /* AFNetworking */,
 			);
 			path = Vendor;
@@ -254,6 +249,8 @@
 			children = (
 				9DE05E74176BA8420049AAB6 /* TwunchesViewController.h */,
 				9DE05E75176BA8420049AAB6 /* TwunchesViewController.m */,
+				9DBF0D89178071E6002DF534 /* TwunchesMapViewController.h */,
+				9DBF0D8A178071E6002DF534 /* TwunchesMapViewController.m */,
 				9D5EB650176BAAF50087FA1A /* TwunchViewController.h */,
 				9D5EB651176BAAF50087FA1A /* TwunchViewController.m */,
 				9D1B79C3176F44C300C01FBB /* MapViewController.h */,
@@ -445,10 +442,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D9A76B4176F31F4007B201B /* Twunch.m in Sources */,
-				9D81EF9D177F7D460064827A /* JMImageCache.m in Sources */,
 				9D9A76BB176F34EF007B201B /* NSDate+Formatting.m in Sources */,
-				9D81EF9E177F7D460064827A /* UIImageView+JMImageCache.m in Sources */,
 				9D9A76B1176F3078007B201B /* NSString+Parsing.m in Sources */,
+				9D514595178094F40021F4F2 /* PinAnnotationView.m in Sources */,
+				9D514596178094F70021F4F2 /* PointAnnotation.m in Sources */,
 				9D9A76A7176F2DD3007B201B /* AFImageRequestOperation.m in Sources */,
 				9D5EB657176BBB120087FA1A /* ParticipantsViewController.m in Sources */,
 				9D5EB64F176BA9D50087FA1A /* TwunchesViewController.m in Sources */,
@@ -466,6 +463,7 @@
 				9DBF0D8817806444002DF534 /* AvatarDownloader.m in Sources */,
 				9D9A76AA176F2DD3007B201B /* AFPropertyListRequestOperation.m in Sources */,
 				9D9A76A5176F2DD3007B201B /* AFHTTPClient.m in Sources */,
+				9D5145901780739F0021F4F2 /* TwunchesMapViewController.m in Sources */,
 				9D9A76A6176F2DD3007B201B /* AFHTTPRequestOperation.m in Sources */,
 				9D6EC6D6176F713B0073662D /* ParticipantCell.m in Sources */,
 			);

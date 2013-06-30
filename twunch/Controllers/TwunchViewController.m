@@ -18,12 +18,12 @@
 @end
 
 @implementation TwunchViewController {
-    IBOutlet UITableViewCell *_nameCell;
-    IBOutlet UITableViewCell *_dateCell;
-    IBOutlet UITableViewCell *_participantsCell;
-    IBOutlet UITableViewCell *_addressCell;
-    IBOutlet UITableViewCell *_noteCell;
-    IBOutlet MKMapView *_mapView;
+    __weak IBOutlet UITableViewCell *_nameCell;
+    __weak IBOutlet UITableViewCell *_dateCell;
+    __weak IBOutlet UITableViewCell *_participantsCell;
+    __weak IBOutlet UITableViewCell *_addressCell;
+    __weak IBOutlet UITableViewCell *_noteCell;
+    __weak IBOutlet MKMapView *_mapView;
 }
 
 - (void)viewDidLoad {
