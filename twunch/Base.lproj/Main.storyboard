@@ -168,7 +168,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="209"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TC0-pt-RdD">
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TC0-pt-RdD">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <connections>
@@ -179,8 +179,10 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="centerX" secondItem="TC0-pt-RdD" secondAttribute="centerX" id="Gi4-g6-uTS"/>
-                                            <constraint firstAttribute="centerY" secondItem="TC0-pt-RdD" secondAttribute="centerY" constant="0.5" id="xfE-vw-KEF"/>
+                                            <constraint firstItem="TC0-pt-RdD" firstAttribute="leading" secondItem="9KZ-KV-K9Q" secondAttribute="leading" id="7cn-e7-owH"/>
+                                            <constraint firstItem="TC0-pt-RdD" firstAttribute="top" secondItem="9KZ-KV-K9Q" secondAttribute="top" id="C1q-me-Vg9"/>
+                                            <constraint firstItem="TC0-pt-RdD" firstAttribute="trailing" secondItem="9KZ-KV-K9Q" secondAttribute="trailing" id="fCz-ch-Ze7"/>
+                                            <constraint firstItem="TC0-pt-RdD" firstAttribute="bottom" secondItem="9KZ-KV-K9Q" secondAttribute="bottom" id="jOa-dg-kYi"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -312,16 +314,6 @@
         </class>
         <class className="TwunchViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TwunchViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="didPressRegister:"/>
-                <relationship kind="action" name="didPressUnregister:"/>
-                <relationship kind="outlet" name="_addressCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="_dateCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="_mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="_nameCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="_noteCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="_participantsCell" candidateClass="UITableViewCell"/>
-            </relationships>
         </class>
         <class className="TwunchesViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TwunchesViewController.h"/>
