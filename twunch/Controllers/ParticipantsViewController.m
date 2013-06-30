@@ -10,9 +10,7 @@
 #import <Accounts/Accounts.h>
 
 #import "Participant.h"
-
-//#import "UIImageView+AFNetworking.h"
-#import "UIImageView+JMImageCache.h"
+#import "AvatarDownloader.h"
 
 #import "ParticipantsViewController.h"
 
@@ -21,14 +19,23 @@
 
 @implementation ParticipantsViewController {
     NSArray *_participants;
-    NSMutableDictionary *_images;
+    NSMutableDictionary *_imageDownloadsInProgress;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     _participants = _twunch.participants;
-    _images = [NSMutableDictionary new];
+    _imageDownloadsInProgress = [NSMutableDictionary dictionary];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    
+    NSArray *allDownloads = [_imageDownloadsInProgress allValues];
+    [allDownloads makeObjectsPerformSelector:@selector(cancel)];
+    
+    [_imageDownloadsInProgress removeAllObjects];
 }
 
 #pragma mark - Table
@@ -44,43 +51,13 @@
     Participant *participant = _participants[indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"@%@", participant.twitterHandle];
     
-    if (_images[indexPath] == nil && twunchapp.avatars[participant.twitterHandle] == nil) {
-        NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1.1/users/show.json"];
-        NSDictionary *params = [NSDictionary dictionaryWithObject:participant.twitterHandle forKey:@"screen_name"];
-        SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:url parameters:params];
-        [request setAccount:twunchapp.account];
-        [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
-            if (responseData) {
-                NSDictionary *user = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:NULL];
-                NSString *profileImageUrl = [user objectForKey:@"profile_image_url"];
-                if (profileImageUrl) {
-                    twunchapp.avatars[participant.twitterHandle] = profileImageUrl;
-                    [twunchapp cache];
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                        [cell.imageView setImageWithURL:[NSURL URLWithString:profileImageUrl]];
-                        
-                        //
-                        //                    NSData *imageData = [NSData dataWithContentsOfURL: [NSURL URLWithString:profileImageUrl]];
-                        //                    _images[indexPath] = [UIImage imageWithData:imageData];
-                        //                    dispatch_async(dispatch_get_main_queue(), ^{
-                        //                        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-                        //                    });
-                    });
-                }
-                
-            }
-            
-        }];
-    } else if (_images[indexPath] == nil) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSData *imageData = [NSData dataWithContentsOfURL: [NSURL URLWithString:twunchapp.avatars[participant.twitterHandle]]];
-            _images[indexPath] = [UIImage imageWithData:imageData];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-            });
-        });
+    if (!participant.icon) {
+        if (self.tableView.dragging == NO && self.tableView.decelerating == NO) {
+            [self startIconDownload:participant forIndexPath:indexPath];
+        }
+//        cell.imageView.image = [UIImage imageNamed:@"Placeholder.png"];
     } else {
-        cell.imageView.image = _images[indexPath];
+        cell.imageView.image = participant.icon;
     }
     
     return cell;
@@ -91,6 +68,45 @@
     
     Participant *participant = _participants[indexPath.row];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:participant.URL]];
+}
+
+#pragma mark - Table cell image
+
+- (void)startIconDownload:(Participant *)participant forIndexPath:(NSIndexPath *)indexPath {
+    AvatarDownloader *iconDownloader = [_imageDownloadsInProgress objectForKey:indexPath];
+    if (iconDownloader == nil) {
+        iconDownloader = [AvatarDownloader new];
+        iconDownloader.participant = participant;
+        [iconDownloader setCompletionHandler:^{
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            cell.imageView.image = participant.icon;
+            [_imageDownloadsInProgress removeObjectForKey:indexPath];
+        }];
+        [_imageDownloadsInProgress setObject:iconDownloader forKey:indexPath];
+        [iconDownloader start];
+    }
+}
+
+- (void)loadImagesForOnscreenRows {
+    if ([_participants count] > 0) {
+        NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
+        for (NSIndexPath *indexPath in visiblePaths) {
+            Participant *participant = [_participants objectAtIndex:indexPath.row];
+            if (!participant.icon) {
+                [self startIconDownload:participant forIndexPath:indexPath];
+            }
+        }
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (!decelerate) {
+        [self loadImagesForOnscreenRows];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self loadImagesForOnscreenRows];
 }
 
 @end

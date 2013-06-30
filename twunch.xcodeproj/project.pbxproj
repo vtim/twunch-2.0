@@ -34,6 +34,7 @@
 		9D9A76B6176F3274007B201B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9A76B5176F3274007B201B /* SystemConfiguration.framework */; };
 		9D9A76B8176F3279007B201B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9A76B7176F3279007B201B /* MobileCoreServices.framework */; };
 		9D9A76BB176F34EF007B201B /* NSDate+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A76BA176F34EF007B201B /* NSDate+Formatting.m */; };
+		9DBF0D8817806444002DF534 /* AvatarDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF0D8717806444002DF534 /* AvatarDownloader.m */; };
 		9DF105C1176885CA00FC9F33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF105C0176885CA00FC9F33 /* Foundation.framework */; };
 		9DF105C3176885CA00FC9F33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF105C2176885CA00FC9F33 /* CoreGraphics.framework */; };
 		9DF105C5176885CA00FC9F33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF105C4176885CA00FC9F33 /* UIKit.framework */; };
@@ -107,6 +108,8 @@
 		9D9A76B7176F3279007B201B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9D9A76B9176F34EF007B201B /* NSDate+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatting.h"; sourceTree = "<group>"; };
 		9D9A76BA176F34EF007B201B /* NSDate+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Formatting.m"; sourceTree = "<group>"; };
+		9DBF0D8617806444002DF534 /* AvatarDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarDownloader.h; sourceTree = "<group>"; };
+		9DBF0D8717806444002DF534 /* AvatarDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarDownloader.m; sourceTree = "<group>"; };
 		9DE05E74176BA8420049AAB6 /* TwunchesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwunchesViewController.h; sourceTree = "<group>"; };
 		9DE05E75176BA8420049AAB6 /* TwunchesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwunchesViewController.m; sourceTree = "<group>"; };
 		9DF105BD176885CA00FC9F33 /* twunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +186,8 @@
 			children = (
 				9D9A7689176F2C54007B201B /* TwunchAPI.h */,
 				9D9A768A176F2C54007B201B /* TwunchAPI.m */,
+				9DBF0D8617806444002DF534 /* AvatarDownloader.h */,
+				9DBF0D8717806444002DF534 /* AvatarDownloader.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -458,6 +463,7 @@
 				9DF105D1176885CA00FC9F33 /* AppDelegate.m in Sources */,
 				9D9A76A8176F2DD3007B201B /* AFJSONRequestOperation.m in Sources */,
 				9DF105CD176885CA00FC9F33 /* main.m in Sources */,
+				9DBF0D8817806444002DF534 /* AvatarDownloader.m in Sources */,
 				9D9A76AA176F2DD3007B201B /* AFPropertyListRequestOperation.m in Sources */,
 				9D9A76A5176F2DD3007B201B /* AFHTTPClient.m in Sources */,
 				9D9A76A6176F2DD3007B201B /* AFHTTPRequestOperation.m in Sources */,
