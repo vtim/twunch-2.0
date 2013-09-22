@@ -11,9 +11,12 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window.tintColor = [UIColor colorWithRed:0.600 green:0.400 blue:0.000 alpha:1.000];
-    
     [self uncache];
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.588 green:0.396 blue:0.075 alpha:1.000]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:18.0] }];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Light" size:14.0] } forState:UIControlStateNormal];
     
     return YES;
 }

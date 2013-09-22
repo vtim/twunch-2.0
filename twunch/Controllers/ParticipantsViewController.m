@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Participants";
+    
     _participants = _twunch.participants;
     _imageDownloadsInProgress = [NSMutableDictionary dictionary];
 }
