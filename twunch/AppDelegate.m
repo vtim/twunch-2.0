@@ -13,10 +13,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self uncache];
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.588 green:0.396 blue:0.075 alpha:1.000]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:18.0] }];
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Light" size:14.0] } forState:UIControlStateNormal];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.588 green:0.396 blue:0.075 alpha:1.000]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.510 green:0.557 blue:0.063 alpha:1.000]];
     
     return YES;
 }

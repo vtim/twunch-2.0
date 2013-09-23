@@ -30,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = NSLocalizedString(@"Twunches", @"Twunches");
+    self.title = NSLocalizedString(@"Map", @"Map");
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"List", @"List") style:UIBarButtonItemStylePlain target:self action:@selector(didPressList:)];
 }

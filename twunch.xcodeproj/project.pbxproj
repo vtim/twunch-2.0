@@ -17,6 +17,10 @@
 		9D5EB653176BAB760087FA1A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5EB652176BAB760087FA1A /* MapKit.framework */; };
 		9D5EB654176BABC90087FA1A /* TwunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5EB651176BAAF50087FA1A /* TwunchViewController.m */; };
 		9D5EB657176BBB120087FA1A /* ParticipantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5EB656176BBB000087FA1A /* ParticipantsViewController.m */; };
+		9D6ACDAF17EF5F170081102A /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6ACDAB17EF5F160081102A /* list.png */; };
+		9D6ACDB017EF5F170081102A /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6ACDAC17EF5F160081102A /* list@2x.png */; };
+		9D6ACDB117EF5F170081102A /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6ACDAD17EF5F170081102A /* map.png */; };
+		9D6ACDB217EF5F170081102A /* map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6ACDAE17EF5F170081102A /* map@2x.png */; };
 		9D6EC6D0176F70510073662D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6EC6CF176F70510073662D /* QuartzCore.framework */; };
 		9D6EC6D6176F713B0073662D /* ParticipantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EC6D5176F713B0073662D /* ParticipantCell.m */; };
 		9D9A76A5176F2DD3007B201B /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A7693176F2DD3007B201B /* AFHTTPClient.m */; };
@@ -75,6 +79,10 @@
 		9D5EB652176BAB760087FA1A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9D5EB655176BBB000087FA1A /* ParticipantsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticipantsViewController.h; sourceTree = "<group>"; };
 		9D5EB656176BBB000087FA1A /* ParticipantsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParticipantsViewController.m; sourceTree = "<group>"; };
+		9D6ACDAB17EF5F160081102A /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
+		9D6ACDAC17EF5F160081102A /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@2x.png"; sourceTree = "<group>"; };
+		9D6ACDAD17EF5F170081102A /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		9D6ACDAE17EF5F170081102A /* map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map@2x.png"; sourceTree = "<group>"; };
 		9D6EC6CF176F70510073662D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9D6EC6D4176F713B0073662D /* ParticipantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticipantCell.h; sourceTree = "<group>"; };
 		9D6EC6D5176F713B0073662D /* ParticipantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticipantCell.m; sourceTree = "<group>"; };
@@ -164,6 +172,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D6ACDB317EF60FD0081102A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9D6ACDAB17EF5F160081102A /* list.png */,
+				9D6ACDAC17EF5F160081102A /* list@2x.png */,
+				9D6ACDAD17EF5F170081102A /* map.png */,
+				9D6ACDAE17EF5F170081102A /* map@2x.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		9D6EC6D3176F713B0073662D /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +323,7 @@
 				9DF105D0176885CA00FC9F33 /* AppDelegate.m */,
 				9DF105D2176885CA00FC9F33 /* Main.storyboard */,
 				9DF105D8176885CA00FC9F33 /* Images.xcassets */,
+				9D6ACDB317EF60FD0081102A /* Assets */,
 				9D9A768B176F2CA2007B201B /* Models */,
 				9D9A7688176F2C41007B201B /* API */,
 				9D6EC6D3176F713B0073662D /* Components */,
@@ -420,9 +440,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6ACDB117EF5F170081102A /* map.png in Resources */,
+				9D6ACDB217EF5F170081102A /* map@2x.png in Resources */,
 				9DF105D9176885CA00FC9F33 /* Images.xcassets in Resources */,
+				9D6ACDB017EF5F170081102A /* list@2x.png in Resources */,
 				9DF105CB176885CA00FC9F33 /* InfoPlist.strings in Resources */,
 				9DF105D4176885CA00FC9F33 /* Main.storyboard in Resources */,
+				9D6ACDAF17EF5F170081102A /* list.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

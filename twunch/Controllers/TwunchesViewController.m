@@ -31,7 +31,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = NSLocalizedString(@"Twunches", @"Twunches");
+    self.tabBarController.navigationController.title = @"Twunches";
+    ((UITabBarItem *) self.tabBarController.tabBar.items[0]).title = NSLocalizedString(@"List", @"List");
+    ((UITabBarItem *) self.tabBarController.tabBar.items[0]).image = [UIImage imageNamed:@"list.png"];
+    ((UITabBarItem *) self.tabBarController.tabBar.items[1]).title = NSLocalizedString(@"Map", @"Map");
+    ((UITabBarItem *) self.tabBarController.tabBar.items[1]).image = [UIImage imageNamed:@"map.png"];
+    
+    self.title = NSLocalizedString(@"List", @"List");
     
     self.refreshControl = [UIRefreshControl new];
     [self.refreshControl addTarget:self action:@selector(willRefresh:) forControlEvents:UIControlEventValueChanged];
@@ -129,6 +135,8 @@
         [self.refreshControl endRefreshing];
         [_activityIndicator stopAnimating];
         [self.tableView reloadData];
+        
+        ((TwunchesMapViewController *) self.tabBarController.viewControllers[1]).twunches = [_twunches.allValues valueForKeyPath:@"@unionOfArrays.self"];
         
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Map", @"Map") style:UIBarButtonItemStylePlain target:self action:@selector(didPressMap:)];
     }];
