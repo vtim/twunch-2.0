@@ -60,6 +60,8 @@
 #pragma mark - Map
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+    if ([annotation isKindOfClass:[MKUserLocation class]]) return nil;
+    
     PinAnnotationView *annotationView = (PinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Callout"];
     if(!annotationView) {
         annotationView = [[PinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Callout"];
