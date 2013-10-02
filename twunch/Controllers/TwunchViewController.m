@@ -29,7 +29,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.title = NSLocalizedString(@"Participants", @"Participants");
+    self.title = NSLocalizedString(@"", @"");
     
     _nameCell.textLabel.text = _twunch.name;
     _noteCell.textLabel.text = _twunch.note == nil || [_twunch.note isEqualToString:@""] ? NSLocalizedString(@"No note", @"No note") : _twunch.note;
