@@ -57,7 +57,7 @@
         if (self.tableView.dragging == NO && self.tableView.decelerating == NO) {
             [self startIconDownload:participant forIndexPath:indexPath];
         }
-//        cell.imageView.image = [UIImage imageNamed:@"Placeholder.png"];
+        cell.imageView.image = [UIImage imageNamed:@"placeholder"];
     } else {
         cell.imageView.image = participant.icon;
     }

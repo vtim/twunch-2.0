@@ -11,7 +11,6 @@
 
 #import "TwunchesViewController.h"
 #import "TwunchViewController.h"
-#import "TwunchesMapViewController.h"
 
 #import "TwunchAPI.h"
 
@@ -48,6 +47,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.translucent = CGRectGetHeight([UIScreen mainScreen].bounds) >= 568.0;
+    
     self.title = NSLocalizedString(@"Twunches", @"Twunches");
     
     UITableViewController *tableViewController = [[UITableViewController alloc] init];
@@ -61,8 +62,10 @@
     _activityIndicator.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     [_tableView addSubview:_activityIndicator];
     
-    _tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
-    _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(64, 0, 0, 0);
+    if (self.navigationController.navigationBar.translucent) {
+        _tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+        _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(64, 0, 0, 0);
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -181,10 +184,6 @@
     if ([segue.identifier isEqualToString:@"Detail"]) {
         TwunchViewController *twunchController = segue.destinationViewController;
         twunchController.twunch = [self twunchForIndexPath:[_tableView indexPathForCell:sender]];
-    } else if ([segue.identifier isEqualToString:@"Map"]) {
-        UINavigationController *navigationController = segue.destinationViewController;
-        TwunchesMapViewController *mapController = (TwunchesMapViewController *)navigationController.topViewController;
-        mapController.twunches = [_twunches.allValues valueForKeyPath:@"@unionOfArrays.self"];
     }
 }
 
