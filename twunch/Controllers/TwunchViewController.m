@@ -63,11 +63,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
-        case 0: return [_nameCell.textLabel.text sizeWithFont:_nameCell.textLabel.font constrainedToSize:(CGSize) { 270, MAXFLOAT }].height + 40;
-        case 1: return [_dateCell.textLabel.text sizeWithFont:_dateCell.textLabel.font constrainedToSize:(CGSize) { 270, MAXFLOAT }].height + 40;
-        case 2: return [_participantsCell.textLabel.text sizeWithFont:_participantsCell.textLabel.font constrainedToSize:(CGSize) { 270, MAXFLOAT }].height + 40;
-        case 3: return [_noteCell.textLabel.text sizeWithFont:_noteCell.textLabel.font constrainedToSize:(CGSize) { 270, MAXFLOAT }].height + 40;
-        case 4: return [_addressCell.textLabel.text sizeWithFont:_addressCell.textLabel.font constrainedToSize:(CGSize) { 270, MAXFLOAT }].height + 40;
+        case 0: return [_nameCell.textLabel.text boundingRectWithSize:(CGSize) { 270, CGFLOAT_MAX } options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName:_nameCell.textLabel.font } context:nil].size.height + 40;
+        case 1: return [_dateCell.textLabel.text boundingRectWithSize:(CGSize) { 270, CGFLOAT_MAX } options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName:_dateCell.textLabel.font } context:nil].size.height + 40;
+        case 2: return [_participantsCell.textLabel.text boundingRectWithSize:(CGSize) { 270, CGFLOAT_MAX } options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName:_participantsCell.textLabel.font } context:nil].size.height + 40;
+        case 3: return [_noteCell.textLabel.text boundingRectWithSize:(CGSize) { 270, CGFLOAT_MAX } options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName:_noteCell.textLabel.font } context:nil].size.height + 40;
+        case 4: return [_addressCell
+                        .textLabel.text boundingRectWithSize:(CGSize) { 270, CGFLOAT_MAX } options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName:_addressCell.textLabel.font } context:nil].size.height + 40;
         case 5: return 210;
         default: return 0;
     }
