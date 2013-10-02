@@ -28,9 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.588 green:0.396 blue:0.075 alpha:1.000]];
-    
+        
     if ([_twunch you]) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Unregister", @"Unregister") style:UIBarButtonItemStylePlain target:self action:@selector(didPressUnregister:)];
     } else {

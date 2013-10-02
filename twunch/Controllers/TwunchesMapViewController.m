@@ -33,6 +33,7 @@
     self.title = NSLocalizedString(@"Map", @"Map");
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"List", @"List") style:UIBarButtonItemStylePlain target:self action:@selector(didPressList:)];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.510 green:0.557 blue:0.063 alpha:1.000]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

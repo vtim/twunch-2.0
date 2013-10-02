@@ -6,5 +6,5 @@
 //  Copyright (c) 2013 fousa. All rights reserved.
 //
 
-@interface TwunchesViewController : UITableViewController
+@interface TwunchesViewController : UIViewController
 @end
