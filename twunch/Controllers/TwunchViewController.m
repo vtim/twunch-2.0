@@ -26,20 +26,24 @@
     __weak IBOutlet MKMapView *_mapView;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-        
-    if ([_twunch you]) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Unregister", @"Unregister") style:UIBarButtonItemStylePlain target:self action:@selector(didPressUnregister:)];
-    } else {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Register", @"Register") style:UIBarButtonItemStylePlain target:self action:@selector(didPressRegister:)];
-    }
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.title = NSLocalizedString(@"Participants", @"Participants");
     
     _nameCell.textLabel.text = _twunch.name;
     _noteCell.textLabel.text = _twunch.note == nil || [_twunch.note isEqualToString:@""] ? NSLocalizedString(@"No note", @"No note") : _twunch.note;
     _dateCell.textLabel.text = [_twunch.date fullFormat];
     _participantsCell.textLabel.text = [NSString stringWithFormat:@"%i %@", _twunch.participants.count , [_twunch you] ? NSLocalizedString(@"participants including you", @"participants including you") : NSLocalizedString(@"participants", @"participants")];
     _addressCell.textLabel.text = _twunch.address;
+    
+    [self.tableView reloadData];
+    
+    if ([_twunch you]) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Unregister", @"Unregister") style:UIBarButtonItemStylePlain target:self action:@selector(didPressUnregister:)];
+    } else {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Register", @"Register") style:UIBarButtonItemStylePlain target:self action:@selector(didPressRegister:)];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {

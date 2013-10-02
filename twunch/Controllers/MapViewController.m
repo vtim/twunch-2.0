@@ -17,12 +17,6 @@
     __weak IBOutlet MKMapView *_mapView;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Directions", @"Directions") style:UIBarButtonItemStylePlain target:self action:@selector(didPressDirections:)];
-}
-
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
@@ -38,6 +32,14 @@
     pin.title = _twunch.name;
     pin.subtitle = _twunch.address;
     [_mapView addAnnotation:pin];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.title = NSLocalizedString(@"Location", @"Location");
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Directions", @"Directions") style:UIBarButtonItemStylePlain target:self action:@selector(didPressDirections:)];
 }
 
 #pragma mark - Actions

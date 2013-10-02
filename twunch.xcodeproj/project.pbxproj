@@ -35,6 +35,7 @@
 		9D9A76B8176F3279007B201B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9A76B7176F3279007B201B /* MobileCoreServices.framework */; };
 		9D9A76BB176F34EF007B201B /* NSDate+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A76BA176F34EF007B201B /* NSDate+Formatting.m */; };
 		9D9AF50B17FC741F0047C49E /* UIView+CBFrameHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9AF50A17FC741F0047C49E /* UIView+CBFrameHelpers.m */; };
+		9D9AF50E17FC87580047C49E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AF51017FC87580047C49E /* Localizable.strings */; };
 		9DBF0D8817806444002DF534 /* AvatarDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF0D8717806444002DF534 /* AvatarDownloader.m */; };
 		9DF105C1176885CA00FC9F33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF105C0176885CA00FC9F33 /* Foundation.framework */; };
 		9DF105C3176885CA00FC9F33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF105C2176885CA00FC9F33 /* CoreGraphics.framework */; };
@@ -111,6 +112,9 @@
 		9D9A76BA176F34EF007B201B /* NSDate+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Formatting.m"; sourceTree = "<group>"; };
 		9D9AF50917FC741F0047C49E /* UIView+CBFrameHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CBFrameHelpers.h"; sourceTree = "<group>"; };
 		9D9AF50A17FC741F0047C49E /* UIView+CBFrameHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CBFrameHelpers.m"; sourceTree = "<group>"; };
+		9D9AF50F17FC87580047C49E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9D9AF51117FC875B0047C49E /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9D9AF51217FC87710047C49E /* nl */ = {isa = PBXFileReference; lastKnownFileType = file; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9DBF0D8617806444002DF534 /* AvatarDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarDownloader.h; sourceTree = "<group>"; };
 		9DBF0D8717806444002DF534 /* AvatarDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarDownloader.m; sourceTree = "<group>"; };
 		9DE05E74176BA8420049AAB6 /* TwunchesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwunchesViewController.h; sourceTree = "<group>"; };
@@ -326,6 +330,7 @@
 		9DF105C7176885CA00FC9F33 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9D9AF51017FC87580047C49E /* Localizable.strings */,
 				9DF105C8176885CA00FC9F33 /* twunch-Info.plist */,
 				9DF105C9176885CA00FC9F33 /* InfoPlist.strings */,
 				9DF105CC176885CA00FC9F33 /* main.m */,
@@ -411,6 +416,7 @@
 			knownRegions = (
 				en,
 				Base,
+				nl,
 			);
 			mainGroup = 9DF105B4176885CA00FC9F33;
 			productRefGroup = 9DF105BE176885CA00FC9F33 /* Products */;
@@ -429,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DF105D9176885CA00FC9F33 /* Images.xcassets in Resources */,
+				9D9AF50E17FC87580047C49E /* Localizable.strings in Resources */,
 				9DF105CB176885CA00FC9F33 /* InfoPlist.strings in Resources */,
 				9DF105D4176885CA00FC9F33 /* Main.storyboard in Resources */,
 			);
@@ -496,6 +503,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9D9AF51017FC87580047C49E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D9AF50F17FC87580047C49E /* Base */,
+				9D9AF51117FC875B0047C49E /* en */,
+				9D9AF51217FC87710047C49E /* nl */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		9DF105C9176885CA00FC9F33 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

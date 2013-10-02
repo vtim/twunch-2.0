@@ -25,10 +25,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Participants";
-    
     _participants = _twunch.participants;
     _imageDownloadsInProgress = [NSMutableDictionary dictionary];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.title = NSLocalizedString(@"Participants", @"Participants");
 }
 
 - (void)didReceiveMemoryWarning {

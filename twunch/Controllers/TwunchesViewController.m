@@ -49,8 +49,6 @@
     
     self.navigationController.navigationBar.translucent = CGRectGetHeight([UIScreen mainScreen].bounds) >= 568.0;
     
-    self.title = NSLocalizedString(@"Twunches", @"Twunches");
-    
     UITableViewController *tableViewController = [[UITableViewController alloc] init];
     tableViewController.tableView = _tableView;
     _refreshControl = [UIRefreshControl new];
@@ -106,6 +104,11 @@
         [_tableView outsideLeftEdgeBy:0.0f];
         [_mapView insideLeftEdgeBy:0.0f];
     }
+    
+    [_segementControl setTitle:NSLocalizedString(@"List", @"List") forSegmentAtIndex:0];
+    [_segementControl setTitle:NSLocalizedString(@"Map", @"Map") forSegmentAtIndex:1];
+    
+    self.title = NSLocalizedString(@"Twunches", @"Twunches");
 }
 
 #pragma mark - Map
