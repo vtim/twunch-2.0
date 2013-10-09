@@ -404,6 +404,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = fousa;
 				TargetAttributes = {
+					9DF105BC176885CA00FC9F33 = {
+						DevelopmentTeam = 743AM63YFU;
+					};
 					9DF105DD176885CA00FC9F33 = {
 						TestTargetID = 9DF105BC176885CA00FC9F33;
 					};
@@ -613,10 +616,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jelle Vandebeeck (DR39Q8437E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jelle Vandebeeck (DR39Q8437E)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "twunch/Twunch-Prefix.pch";
 				INFOPLIST_FILE = "twunch/Twunch-Info.plist";
 				PRODUCT_NAME = Twunch;
+				PROVISIONING_PROFILE = "DC2E6CD1-D4F8-4DC2-9DAE-92EF6B14DB91";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -626,10 +632,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jelle Vandebeeck (743AM63YFU)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jelle Vandebeeck (743AM63YFU)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "twunch/Twunch-Prefix.pch";
 				INFOPLIST_FILE = "twunch/Twunch-Info.plist";
 				PRODUCT_NAME = Twunch;
+				PROVISIONING_PROFILE = "C2B343DC-774F-4B25-A6C4-0B5603CEA712";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
