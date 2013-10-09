@@ -123,7 +123,7 @@
         }
         
         if ([elementName isEqualToString:@"twunch"]) {
-            NSString *dateKey = [_twunch.date monthFormat];
+            NSString *dateKey = [_twunch.date dateKeyFormat];
             if (_twunches[dateKey] == nil) {
                 _twunches[dateKey] = [NSMutableArray new];
             }

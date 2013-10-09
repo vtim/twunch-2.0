@@ -163,7 +163,8 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [[[self months][section] dateFromMonth] fullMonthFormat];
+    Twunch *twunch = [self twunchesForSection:section][0];
+    return [twunch.date fullMonthFormat];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -197,7 +198,8 @@
 }
 
 - (NSArray *)twunchesForSection:(NSInteger)section {
-    return _twunches[[self months][section]];
+    NSArray *twunches = _twunches[[self months][section]];
+    return [twunches sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]]];
 }
 
 - (Twunch *)twunchForIndexPath:(NSIndexPath *)indexPath {

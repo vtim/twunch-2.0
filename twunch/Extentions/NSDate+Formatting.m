@@ -21,12 +21,12 @@
     return [fullFormatter stringFromDate:self];
 }
 
-- (NSString *)monthFormat {
+- (NSString *)dateKeyFormat {
     static NSDateFormatter *monthFormatter = nil;
     static dispatch_once_t onceMonthToken;
     dispatch_once(&onceMonthToken, ^{
         monthFormatter = [NSDateFormatter new];
-        [monthFormatter setDateFormat:@"MM"];
+        [monthFormatter setDateFormat:@"YYYYMM"];
     });
     return [monthFormatter stringFromDate:self];
 }

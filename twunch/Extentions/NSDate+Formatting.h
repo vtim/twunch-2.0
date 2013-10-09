@@ -8,6 +8,6 @@
 
 @interface NSDate (Formatting)
 - (NSString *)fullFormat;
-- (NSString *)monthFormat;
+- (NSString *)dateKeyFormat;
 - (NSString *)fullMonthFormat;
 @end
