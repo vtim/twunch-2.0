@@ -187,7 +187,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"Detail"]) {
         TwunchViewController *twunchController = segue.destinationViewController;
-        twunchController.twunch = [self twunchForIndexPath:[_tableView indexPathForCell:sender]];
+        if ([sender isKindOfClass:[Twunch class]]) {
+            twunchController.twunch = sender;
+        } else {
+            twunchController.twunch = [self twunchForIndexPath:[_tableView indexPathForCell:sender]];
+        }
     }
 }
 
