@@ -73,7 +73,7 @@
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     Participant *participant = _participants[indexPath.row];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:participant.URL]];
+    [self openProfileForParticipant:participant];
 }
 
 #pragma mark - Table cell image
@@ -113,6 +113,19 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [self loadImagesForOnscreenRows];
+}
+
+#pragma mark - Helper methods
+
+- (void)openProfileForParticipant:(Participant *)participant {
+    UIApplication *application = [UIApplication sharedApplication];
+    if ([application canOpenURL:[participant tweetbotURL]]) {
+        [application openURL:[participant tweetbotURL]];
+    } else if ([application canOpenURL:[participant twitterAppURL]]) {
+        [application openURL:[participant twitterAppURL]];
+    } else {
+        [application openURL:participant.twitterWebURL];
+    }
 }
 
 @end

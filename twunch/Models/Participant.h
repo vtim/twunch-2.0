@@ -10,5 +10,8 @@
 @property (nonatomic, strong) NSString *twitterHandle;
 @property (nonatomic, strong) UIImage *icon;
 
-- (NSString *)URL;
+- (NSURL *)twitterWebURL;
+- (NSURL *)twitterAppURL;
+- (NSURL *)tweetbotURL;
+
 @end

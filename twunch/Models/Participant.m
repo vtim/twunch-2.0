@@ -10,8 +10,16 @@
 
 @implementation Participant
 
-- (NSString *)URL {
-    return [NSString stringWithFormat:@"http://twitter.com/%@", _twitterHandle];
+- (NSURL *)twitterWebURL {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"http://twitter.com/%@", _twitterHandle]];
+}
+
+- (NSURL *)twitterAppURL {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"twitter://user?screen_name=%@", _twitterHandle]];
+}
+
+- (NSURL *)tweetbotURL {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"tweetbot:///user_profile/%@", _twitterHandle]];
 }
 
 @end
