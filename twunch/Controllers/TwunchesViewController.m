@@ -35,6 +35,8 @@
     UIRefreshControl *_refreshControl;
     
     __weak IBOutlet UITableView *_tableView;
+    UITableViewCell *_selectedCell;
+    
     __weak IBOutlet MKMapView *_mapView;
     
     __weak IBOutlet UISegmentedControl *_segementControl;
@@ -91,11 +93,15 @@
         }
     }
     
+    _selectedCell = nil;
+    
     [self refreshMap];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    [_selectedCell setSelected:NO animated:animated];
     
     if (_segementControl.selectedSegmentIndex == 0) {
         [_tableView insideLeftEdgeBy:0.0f];
@@ -109,6 +115,12 @@
     [_segementControl setTitle:NSLocalizedString(@"Map", @"Map") forSegmentAtIndex:1];
     
     self.title = NSLocalizedString(@"Twunches", @"Twunches");
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [_selectedCell setSelected:YES animated:animated];
 }
 
 #pragma mark - Map
@@ -190,6 +202,7 @@
         if ([sender isKindOfClass:[Twunch class]]) {
             twunchController.twunch = sender;
         } else {
+            _selectedCell = sender;
             twunchController.twunch = [self twunchForIndexPath:[_tableView indexPathForCell:sender]];
         }
     }
